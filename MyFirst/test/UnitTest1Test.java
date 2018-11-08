@@ -12,6 +12,7 @@ public class UnitTest1Test {
 
     }
 
+    /* java doc */
     @Test
     public void testString(){
         UnitTest1 test1 = new UnitTest1();
