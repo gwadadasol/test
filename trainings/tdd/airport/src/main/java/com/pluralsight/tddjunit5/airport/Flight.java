@@ -6,9 +6,20 @@ public abstract class Flight {
 
     private String id;
     Set<Passager> passagersSet = new HashSet<Passager>();
+    private int distance;
 
-    public Flight(String id){
+    public int getDistance() {
+        return distance;
+    }
+
+    public void setDistance(int distance) {
+        this.distance = distance;
+    }
+
+    public Flight(String id, int distance){
+
         this.id = id;
+        this.distance = distance;
     }
 
     public String getId() {

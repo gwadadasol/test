@@ -2,8 +2,11 @@ package com.pluralsight.tddjunit5.airport;
 
 public class EconomyFlight extends Flight {
 
+    public EconomyFlight(String id, int mileage) {
+        super(id, mileage);
+    }
     public EconomyFlight(String id) {
-        super(id);
+        super(id, 0);
     }
 
     @Override

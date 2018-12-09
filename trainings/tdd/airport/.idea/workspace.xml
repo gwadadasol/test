@@ -5,13 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8d3faba-39ed-4c7e-99eb-efefeb950ab0" name="Default Changelist" comment="Add PremiumFlight and only allow passager to be register once">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/tddjunit5/airport/PremiumFlight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/tddjunit5/airport/com/pluralsight/tddjunit5/Mileage/Mileage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/pluralsight/tddjunit5/airport/com/pluralsight/tddjunit5/mileage/MileageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.attach_pid14659" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.attach_pid15488" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.attach_pid16237" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.attach_pid16269" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.attach_pid28610" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.attach_pid28801" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.attach_pid28932" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.attach_pid29444" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.attach_pid4102" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.attach_pid4148" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.attach_pid5027" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/tddjunit5/airport/BusinessFlight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/tddjunit5/airport/BusinessFlight.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/tddjunit5/airport/EconomyFlight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/tddjunit5/airport/EconomyFlight.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/tddjunit5/airport/Flight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/tddjunit5/airport/Flight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/pluralsight/tddjunit5/airport/AirportTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/pluralsight/tddjunit5/airport/AirportTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/tddjunit5/airport/PremiumFlight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/tddjunit5/airport/PremiumFlight.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/jacoco.exec" beforeDir="false" afterPath="$PROJECT_DIR$/target/jacoco.exec" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
@@ -39,20 +51,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/pluralsight/tddjunit5/airport/Passager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+            <state relative-caret-position="255">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
               <folding>
+                <element signature="e#252#253#0" expanded="true" />
                 <element signature="e#278#279#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/pluralsight/tddjunit5/airport/AirportTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="246" selection-start-line="246" selection-end-line="246" />
+            <state relative-caret-position="136">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="class#BusinessFlightTest#0;class#AirportTest#0" />
@@ -62,13 +75,50 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/pluralsight/tddjunit5/airport/com/pluralsight/tddjunit5/Mileage/Mileage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#525#526#0" expanded="true" />
+                <element signature="e#548#549#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/pluralsight/tddjunit5/airport/com/pluralsight/tddjunit5/mileage/MileageTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="717">
+              <caret line="82" column="44" selection-start-line="82" selection-start-column="44" selection-end-line="82" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/pluralsight/tddjunit5/airport/PremiumFlight.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+            <state relative-caret-position="90">
+              <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
               <folding>
                 <element signature="e#123#124#0" expanded="true" />
                 <element signature="e#147#148#0" expanded="true" />
+                <element signature="e#208#209#0" expanded="true" />
+                <element signature="e#236#237#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -77,20 +127,28 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/pluralsight/tddjunit5/airport/Flight.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
+            <state relative-caret-position="330">
+              <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+              <folding>
+                <element signature="e#234#235#0" expanded="true" />
+                <element signature="e#265#266#0" expanded="true" />
+                <element signature="e#310#311#0" expanded="true" />
+                <element signature="e#350#351#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/pluralsight/tddjunit5/airport/EconomyFlight.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+            <state relative-caret-position="90">
+              <caret line="6" column="5" lean-forward="true" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
               <folding>
                 <element signature="e#125#126#0" expanded="true" />
                 <element signature="e#150#151#0" expanded="true" />
+                <element signature="e#211#212#0" expanded="true" />
+                <element signature="e#239#240#0" expanded="true" />
                 <element signature="e#217#218#0" expanded="true" />
                 <element signature="e#266#267#0" expanded="true" />
               </folding>
@@ -101,11 +159,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/pluralsight/tddjunit5/airport/BusinessFlight.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="165">
+              <caret line="11" lean-forward="true" selection-start-line="8" selection-end-line="11" />
               <folding>
                 <element signature="e#127#128#0" expanded="true" />
                 <element signature="e#152#153#0" expanded="true" />
+                <element signature="e#227#228#0" expanded="true" />
+                <element signature="e#261#262#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -129,12 +189,16 @@
         <option value="$PROJECT_DIR$/src/main/java/Passager.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pluralsight/tddjunit5/airport/Passager.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pluralsight/tddjunit5/airport/Airport.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pluralsight/tddjunit5/airport/EconomyFlight.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/pluralsight/tddjunit5/airport/AirportTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pluralsight/tddjunit5/airport/com/pluralsight/tddjunut5/Milage/Milage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pluralsight/tddjunit5/airport/com/pluralsight/tddjunut5/Mileage/Mileage.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pluralsight/tddjunit5/airport/Flight.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/pluralsight/tddjunit5/airport/com/pluralsight/tddjunit5/mileage/MileageTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pluralsight/tddjunit5/airport/com/pluralsight/tddjunit5/Mileage/Mileage.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pluralsight/tddjunit5/airport/BusinessFlight.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pluralsight/tddjunit5/airport/PremiumFlight.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pluralsight/tddjunit5/airport/Flight.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/pluralsight/tddjunit5/airport/AirportTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pluralsight/tddjunit5/airport/EconomyFlight.java" />
       </list>
     </option>
   </component>
@@ -172,7 +236,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -210,6 +273,15 @@
               <item name="airport" type="b2602c69:ProjectViewProjectNode" />
               <item name="airport" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="airport" type="462c0819:PsiDirectoryNode" />
+              <item name="Mileage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="airport" type="b2602c69:ProjectViewProjectNode" />
+              <item name="airport" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -226,6 +298,15 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="airport" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="airport" type="b2602c69:ProjectViewProjectNode" />
+              <item name="airport" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="airport" type="462c0819:PsiDirectoryNode" />
+              <item name="mileage" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="airport" type="b2602c69:ProjectViewProjectNode" />
@@ -236,12 +317,14 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -262,21 +345,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in airport">
+  <component name="RunManager" selected="JUnit.MileageTest">
     <configuration name="AirportTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="airport" />
       <option name="PACKAGE_NAME" value="com.pluralsight.tddjunit5.airport" />
       <option name="MAIN_CLASS_NAME" value="com.pluralsight.tddjunit5.airport.AirportTest" />
       <option name="METHOD_NAME" value="" />
       <option name="PARAMETERS" value="" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="All in airport (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="airport" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -313,20 +388,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MileageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="airport" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pluralsight.tddjunit5.airport.com.pluralsight.tddjunit5.mileage.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.pluralsight.tddjunit5.airport.com.pluralsight.tddjunit5.mileage" />
+      <option name="MAIN_CLASS_NAME" value="com.pluralsight.tddjunit5.airport.com.pluralsight.tddjunit5.mileage.MileageTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MileageTest" />
         <item itemvalue="JUnit.All in airport" />
         <item itemvalue="JUnit.All in airport (4)" />
         <item itemvalue="JUnit.All in airport (3)" />
         <item itemvalue="JUnit.All in airport (2)" />
-        <item itemvalue="JUnit.All in airport (1)" />
       </list>
     </recent_temporary>
   </component>
   <component name="TestHistory">
-    <history-entry file="AirportTest - 2018.12.09 at 08h 00m 05s.xml">
-      <configuration name="AirportTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="AirportTest$EconomyFlightTest$VIPPassager - 2018.12.09 at 08h 07m 52s.xml">
       <configuration name="AirportTest$EconomyFlightTest$VIPPassager" configurationId="JUnit" />
     </history-entry>
@@ -354,11 +440,14 @@
     <history-entry file="All_in_airport_(2) - 2018.12.09 at 08h 16m 38s.xml">
       <configuration name="All in airport (2)" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="MileageTest - 2018.12.09 at 15h 00m 54s.xml">
+      <configuration name="MileageTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1018" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26627535" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26947704" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -373,7 +462,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="11" visible="true" weight="0.3295838" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.3295838" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3295838" />
       <window_info anchor="bottom" id="Dependency Viewer" order="13" weight="0.3295838" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -408,13 +497,6 @@
     <entry file="file://$PROJECT_DIR$/target/jacoco-ut/index.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.0.1/junit-jupiter-api-5.0.1.jar!/org/junit/jupiter/api/Assertions.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -436,63 +518,105 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pluralsight/tddjunit5/airport/Passager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+        <state relative-caret-position="255">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
           <folding>
+            <element signature="e#252#253#0" expanded="true" />
             <element signature="e#278#279#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pluralsight/tddjunit5/airport/PremiumFlight.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
-          <folding>
-            <element signature="e#123#124#0" expanded="true" />
-            <element signature="e#147#148#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="717">
+          <caret line="82" column="44" selection-start-line="82" selection-start-column="44" selection-end-line="82" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pluralsight/tddjunit5/airport/Flight.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pluralsight/tddjunit5/airport/EconomyFlight.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+        <state relative-caret-position="330">
+          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
           <folding>
-            <element signature="e#125#126#0" expanded="true" />
-            <element signature="e#150#151#0" expanded="true" />
-            <element signature="e#217#218#0" expanded="true" />
-            <element signature="e#266#267#0" expanded="true" />
+            <element signature="e#234#235#0" expanded="true" />
+            <element signature="e#265#266#0" expanded="true" />
+            <element signature="e#310#311#0" expanded="true" />
+            <element signature="e#350#351#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pluralsight/tddjunit5/airport/BusinessFlight.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/pluralsight/tddjunit5/airport/com/pluralsight/tddjunit5/mileage/MileageTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="165">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
           <folding>
-            <element signature="e#127#128#0" expanded="true" />
-            <element signature="e#152#153#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pluralsight/tddjunit5/airport/com/pluralsight/tddjunit5/Mileage/Mileage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#525#526#0" expanded="true" />
+            <element signature="e#548#549#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/pluralsight/tddjunit5/airport/AirportTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="246" selection-start-line="246" selection-end-line="246" />
+        <state relative-caret-position="136">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#BusinessFlightTest#0;class#AirportTest#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pluralsight/tddjunit5/airport/BusinessFlight.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" lean-forward="true" selection-start-line="8" selection-end-line="11" />
+          <folding>
+            <element signature="e#127#128#0" expanded="true" />
+            <element signature="e#152#153#0" expanded="true" />
+            <element signature="e#227#228#0" expanded="true" />
+            <element signature="e#261#262#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pluralsight/tddjunit5/airport/PremiumFlight.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+          <folding>
+            <element signature="e#123#124#0" expanded="true" />
+            <element signature="e#147#148#0" expanded="true" />
+            <element signature="e#208#209#0" expanded="true" />
+            <element signature="e#236#237#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pluralsight/tddjunit5/airport/EconomyFlight.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="5" lean-forward="true" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+          <folding>
+            <element signature="e#125#126#0" expanded="true" />
+            <element signature="e#150#151#0" expanded="true" />
+            <element signature="e#211#212#0" expanded="true" />
+            <element signature="e#239#240#0" expanded="true" />
+            <element signature="e#217#218#0" expanded="true" />
+            <element signature="e#266#267#0" expanded="true" />
           </folding>
         </state>
       </provider>
