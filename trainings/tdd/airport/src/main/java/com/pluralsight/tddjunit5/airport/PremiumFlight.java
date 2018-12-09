@@ -1,9 +1,8 @@
 package com.pluralsight.tddjunit5.airport;
 
-public class BusinessFlight extends Flight {
-
-    public BusinessFlight(String id) {
-        super(id);
+public class PremiumFlight extends Flight {
+    public PremiumFlight(String s) {
+        super(s);
     }
 
     @Override
@@ -16,6 +15,9 @@ public class BusinessFlight extends Flight {
 
     @Override
     public boolean removePassager(Passager passager) {
+        if (passager.isVip()){
+            return passagersSet.remove(passager);
+        }
         return false;
     }
 }
