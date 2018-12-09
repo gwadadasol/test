@@ -13,6 +13,10 @@ public class MileageTest {
     void testMileage(){
         Passager mike = new Passager("Mike", false);
         Passager john = new Passager("John", true);
+        Passager john2 = new Passager("John", true);
+        Passager phil = new Passager("Phil", true);
+
+
         Flight ecoFlight = new EconomyFlight("e", 300);
         Flight busFlight = new BusinessFlight("b", 800);
         Flight preFlight = new PremiumFlight("p", 400);
@@ -21,6 +25,7 @@ public class MileageTest {
 
         ecoFlight.addPassager(mike);
         ecoFlight.addPassager(john);
+        ecoFlight.addPassager(john2);
 
         busFlight.addPassager(mike);
         busFlight.addPassager(john);
@@ -33,8 +38,9 @@ public class MileageTest {
         mileage.addFlight ( preFlight);
 
         assertAll("test mileage",
-                () -> assertEquals(75, mileage.getPoints(mike)),
-        () -> assertEquals(150, mileage.getPoints(john)));
+                () -> assertEquals(15, mileage.getPoints(mike)),
+                () -> assertEquals(0, mileage.getPoints(phil)),
+                () -> assertEquals(150, mileage.getPoints(john2)));
 
     }
 }

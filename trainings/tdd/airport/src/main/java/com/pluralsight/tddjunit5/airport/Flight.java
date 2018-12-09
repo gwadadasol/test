@@ -12,10 +12,6 @@ public abstract class Flight {
         return distance;
     }
 
-    public void setDistance(int distance) {
-        this.distance = distance;
-    }
-
     public Flight(String id, int distance){
 
         this.id = id;
