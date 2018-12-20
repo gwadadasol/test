@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.pluralsight.tddjunit5.airport.AirportTest" time="0.052" tests="26" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.pluralsight.tddjunit5.database.StatisticsTest" time="0.036" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="gnome"/>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
@@ -59,30 +59,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="testBusinessFlightVipPassager" classname="com.pluralsight.tddjunit5.airport.AirportTest$PremiumFlightTest$VIPPassager" time="0.007"/>
-  <testcase name="testBusinessFlightVipPassager" classname="com.pluralsight.tddjunit5.airport.AirportTest$BusinessFlightTest$VIPPassager" time="0.001"/>
-  <testcase name="testEconomyFlightVipPassagerAddedOnlyOnce{RepetitionInfo}" classname="com.pluralsight.tddjunit5.airport.AirportTest$PremiumFlightTest$VIPPassager" time="0.003"/>
-  <testcase name="testEconomyFlightVipPassagerAddedOnlyOnce{RepetitionInfo}" classname="com.pluralsight.tddjunit5.airport.AirportTest$PremiumFlightTest$VIPPassager" time="0"/>
-  <testcase name="testEconomyFlightVipPassagerAddedOnlyOnce{RepetitionInfo}" classname="com.pluralsight.tddjunit5.airport.AirportTest$PremiumFlightTest$VIPPassager" time="0"/>
-  <testcase name="testEconomyFlightVipPassagerAddedOnlyOnce{RepetitionInfo}" classname="com.pluralsight.tddjunit5.airport.AirportTest$PremiumFlightTest$VIPPassager" time="0"/>
-  <testcase name="testEconomyFlightVipPassagerAddedOnlyOnce{RepetitionInfo}" classname="com.pluralsight.tddjunit5.airport.AirportTest$PremiumFlightTest$VIPPassager" time="0"/>
-  <testcase name="testEconomyFlightVipPassagerAddedOnlyOnce{RepetitionInfo}" classname="com.pluralsight.tddjunit5.airport.AirportTest$EconomyFlightTest$VIPPassager" time="0.001"/>
-  <testcase name="testEconomyFlightVipPassagerAddedOnlyOnce{RepetitionInfo}" classname="com.pluralsight.tddjunit5.airport.AirportTest$EconomyFlightTest$VIPPassager" time="0"/>
-  <testcase name="testEconomyFlightVipPassagerAddedOnlyOnce{RepetitionInfo}" classname="com.pluralsight.tddjunit5.airport.AirportTest$EconomyFlightTest$VIPPassager" time="0"/>
-  <testcase name="testEconomyFlightVipPassagerAddedOnlyOnce{RepetitionInfo}" classname="com.pluralsight.tddjunit5.airport.AirportTest$EconomyFlightTest$VIPPassager" time="0"/>
-  <testcase name="testEconomyFlightVipPassagerAddedOnlyOnce{RepetitionInfo}" classname="com.pluralsight.tddjunit5.airport.AirportTest$EconomyFlightTest$VIPPassager" time="0"/>
-  <testcase name="testBusinessFlightUsualPassager" classname="com.pluralsight.tddjunit5.airport.AirportTest$PremiumFlightTest$UsualPassager" time="0.002"/>
-  <testcase name="testBusinessFlightUsualPassager" classname="com.pluralsight.tddjunit5.airport.AirportTest$BusinessFlightTest$UsualPassager" time="0.001"/>
-  <testcase name="testBusinessFlightVipPassagerAddedOnlyOnce{RepetitionInfo}" classname="com.pluralsight.tddjunit5.airport.AirportTest$BusinessFlightTest$VIPPassager" time="0.001"/>
-  <testcase name="testBusinessFlightVipPassagerAddedOnlyOnce{RepetitionInfo}" classname="com.pluralsight.tddjunit5.airport.AirportTest$BusinessFlightTest$VIPPassager" time="0"/>
-  <testcase name="testBusinessFlightVipPassagerAddedOnlyOnce{RepetitionInfo}" classname="com.pluralsight.tddjunit5.airport.AirportTest$BusinessFlightTest$VIPPassager" time="0"/>
-  <testcase name="testBusinessFlightVipPassagerAddedOnlyOnce{RepetitionInfo}" classname="com.pluralsight.tddjunit5.airport.AirportTest$BusinessFlightTest$VIPPassager" time="0"/>
-  <testcase name="testBusinessFlightVipPassagerAddedOnlyOnce{RepetitionInfo}" classname="com.pluralsight.tddjunit5.airport.AirportTest$BusinessFlightTest$VIPPassager" time="0"/>
-  <testcase name="testEconomyFlightVipPassager" classname="com.pluralsight.tddjunit5.airport.AirportTest$EconomyFlightTest$VIPPassager" time="0.002"/>
-  <testcase name="testEconomyFlightUsualPassager" classname="com.pluralsight.tddjunit5.airport.AirportTest$EconomyFlightTest$UsualPassager" time="0.001"/>
-  <testcase name="testEconomyFlightUsualPassagerAddedOnlyOnce{RepetitionInfo}" classname="com.pluralsight.tddjunit5.airport.AirportTest$EconomyFlightTest$UsualPassager" time="0.001"/>
-  <testcase name="testEconomyFlightUsualPassagerAddedOnlyOnce{RepetitionInfo}" classname="com.pluralsight.tddjunit5.airport.AirportTest$EconomyFlightTest$UsualPassager" time="0.001"/>
-  <testcase name="testEconomyFlightUsualPassagerAddedOnlyOnce{RepetitionInfo}" classname="com.pluralsight.tddjunit5.airport.AirportTest$EconomyFlightTest$UsualPassager" time="0"/>
-  <testcase name="testEconomyFlightUsualPassagerAddedOnlyOnce{RepetitionInfo}" classname="com.pluralsight.tddjunit5.airport.AirportTest$EconomyFlightTest$UsualPassager" time="0"/>
-  <testcase name="testEconomyFlightUsualPassagerAddedOnlyOnce{RepetitionInfo}" classname="com.pluralsight.tddjunit5.airport.AirportTest$EconomyFlightTest$UsualPassager" time="0"/>
+  <testcase name="testQueryData" classname="com.pluralsight.tddjunit5.database.StatisticsTest" time="0.036"/>
 </testsuite>

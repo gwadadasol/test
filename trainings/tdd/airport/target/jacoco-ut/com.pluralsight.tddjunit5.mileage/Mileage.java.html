@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Mileage.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">TDD</a> &gt; <a href="index.source.html" class="el_package">com.pluralsight.tddjunit5.mileage</a> &gt; <span class="el_source">Mileage.java</span></div><h1>Mileage.java</h1><pre class="source lang-java linenums">package com.pluralsight.tddjunit5.mileage;
+
+import com.pluralsight.tddjunit5.airport.Flight;
+import com.pluralsight.tddjunit5.airport.Passager;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Mileage {
+
+    public static final int VIP_FACTOR = 10;
+    public static final int USUAL_FACTOR = 20;
+
+    private Map&lt;Passager, Integer&gt; passagersMileages;
+    private Map&lt;Passager, Integer&gt; passagersBonusPoints;
+
+<span class="fc" id="L17">    public Mileage() {</span>
+<span class="fc" id="L18">        passagersBonusPoints = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L19">        passagersMileages = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L20">    }</span>
+
+    public void addFlight(Flight flight) {
+<span class="fc bfc" id="L23" title="All 2 branches covered.">        for (Passager passager : flight.getPassagersSet()) {</span>
+<span class="fc bfc" id="L24" title="All 2 branches covered.">            int newValue = (passagersMileages.containsKey(passager) ? passagersMileages.get(passager).intValue() : 0)</span>
+<span class="fc" id="L25">                    + flight.getDistance();</span>
+<span class="fc" id="L26">            passagersMileages.put(passager, new Integer(newValue));</span>
+<span class="fc bfc" id="L27" title="All 2 branches covered.">            passagersBonusPoints.put(passager, new Integer(passager.isVip()?newValue/VIP_FACTOR:newValue/USUAL_FACTOR));</span>
+<span class="fc" id="L28">        }</span>
+<span class="fc" id="L29">    }</span>
+
+    public int getPoints(Passager passager) {
+<span class="fc bfc" id="L32" title="All 2 branches covered.">        if (passagersBonusPoints.containsKey(passager)){</span>
+<span class="fc" id="L33">            return passagersBonusPoints.get(passager);</span>
+        }
+<span class="fc" id="L35">        return 0;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.1.201803210924</span></div></body></html>
