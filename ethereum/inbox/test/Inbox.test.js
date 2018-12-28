@@ -17,7 +17,7 @@ let inbox;
 
 const INITIAL_VARIABLE = 'Hi There!';
 
-const RINKEBY _ENDPOINT = 'https://rinkeby.infura.io/v3/f9597fededad43c3a3e9caae0e60b84b';
+
 
 beforeEach( async () => {
    // Get a list of all accounts
