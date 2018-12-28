@@ -12,14 +12,6 @@ let inbox;
 beforeEach( async () => {
    // Get a list of all accounts
 
-
-    // Old code written as a promesse
-   //  web3.eth.getAccounts()
-   //      .then(fetchedAccounts => {
-   //          console.log(fetchedAccounts);
-   //      })
-
-
     // New code with asynch syntax
     // add await when call the function
     // add asyn  in front of the function  ( just after the beforeEach)
@@ -36,31 +28,3 @@ describe('Inbox',  () => {
         console.log(inbox);
     })
 });
-
-
-// Moka test sample
-// class Car{
-//     park(){
-//         return 'stopped';
-//     }
-//     drive(){
-//         return 'wroom';
-//     }
-// }
-//
-//
-// let car;
-//
-// beforeEach(() => {
-//     car = new Car();
-// })
-//
-// describe('Car', () => {
-//     it('can park', () => {
-//        assert.equal(car.park(), 'stopped');
-//     });
-//     it('can drive', () => {
-//         assert.equal(car.drive(), 'wroom');
-//
-//     })
-// });
