@@ -1,0 +1,7 @@
+C:\Users\phili\source\repos\test\csharp\BankAccountManager\BankAccountManager\bin\Debug\BankAccountManager.exe.config
+C:\Users\phili\source\repos\test\csharp\BankAccountManager\BankAccountManager\bin\Debug\BankAccountManager.exe
+C:\Users\phili\source\repos\test\csharp\BankAccountManager\BankAccountManager\bin\Debug\BankAccountManager.pdb
+C:\Users\phili\source\repos\test\csharp\BankAccountManager\BankAccountManager\obj\Debug\BankAccountManager.csprojAssemblyReference.cache
+C:\Users\phili\source\repos\test\csharp\BankAccountManager\BankAccountManager\obj\Debug\BankAccountManager.csproj.CoreCompileInputs.cache
+C:\Users\phili\source\repos\test\csharp\BankAccountManager\BankAccountManager\obj\Debug\BankAccountManager.exe
+C:\Users\phili\source\repos\test\csharp\BankAccountManager\BankAccountManager\obj\Debug\BankAccountManager.pdb
