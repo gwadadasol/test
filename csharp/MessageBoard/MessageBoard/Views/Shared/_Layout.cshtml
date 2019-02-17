@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-ng-app="@ViewBag.InitModule">
+<head>
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    <!-- Site Title -->
+    <title>@ViewBag.Title - MessageBoard</title>
+    <!--
+    CSS
+    ============================================= -->
+    <link rel="stylesheet" href="~/Content/Template/css/linearicons.css">
+    <link rel="stylesheet" href="~/Content/Template/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/Template/css/bootstrap.css">
+    <!--link rel="stylesheet" href="~/Content/Template/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/Content/Template/css/nice-select.css">
+    <link rel="stylesheet" href="~/Content/Template/css/animate.min.css">
+    <link rel="stylesheet" href="~/Content/Template/css/owl.carousel.css"-->
+    <link rel="stylesheet" href="~/Content/Template/css/main.css">
+
+    <link href="~/Content/Site.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="row align-items-center justify-content-between d-flex">
+                <nav id="nav-menu-container">
+                    <ul class="nav-menu">
+                        <li class="menu-active"><a href="#home">Home</a></li>
+                        <li><a href="~/Home/Contact">Contacts</a></li>
+                        <li>@Html.ActionLink("Contacts!", "Contact", "Home")</li>
+                        <li>@Html.ActionLink("MyMessages", "MyMessage", "Home")</li>
+                    </ul>
+                </nav><!-- #nav-menu-container -->
+            </div>
+        </div>
+
+        <div class="container">
+            <div>
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+    <script src="~/Scripts/easing.min.js"></script>
+    <script src="~/Scripts/hoverIntent.js"></script>
+    <script src="~/Scripts/superfish.min.js"></script>
+    <script src="~/Scripts/jquery.ajaxchimp.min.js"></script>
+    <script src="~/Scripts/jquery.magnific-popup.min.js"></script>
+    <script src="~/Scripts/owl.carousel.min.js"></script>
+    <script src="~/Scripts/jquery.sticky.js"></script>
+    <script src="~/Scripts/jquery.nice-select.min.js"></script>
+    <script src="~/Scripts/parallax.min.js"></script>
+    <script src="~/Scripts/mail-script.js"></script>
+    <script src="~/Scripts/main.js"></script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+

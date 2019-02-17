@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "Contact  Us";
+}
+@section scripts
+    {
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<address>
+    One Microsoft Way<br />
+    Redmond, WA 98052-6399<br />
+    <abbr title="Phone">P:</abbr>
+    425.555.0100
+</address>
+
+<address>
+    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+</address>
+
+<div class="col-lg-8 col-md-8">
+    <h3 class="mb-30">Form Element</h3>
+    <form action="#" method="post">
+        <div class="mt-10">
+            <input type="text" name="first_name" placeholder="First Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'First Name'" required class="single-input" data-val="true" data-val-required="*">
+            <span class="field-validation-valid" data-valmsg-for="first_name" data-valmsg-replace="true"></span>
+        </div>
+        <div class="mt-10">
+            <input type="text" name="last_name" placeholder="Last Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Last Name'" required class="single-input" data-val="true" data-val-required="*">
+            <span class="field-validation-valid" data-valmsg-for="last_name" data-valmsg-replace="true"></span>
+        </div>
+        <div class="mt-10">
+            <input type="email" name="EMAIL" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'" required class="single-input" data-val="true" data-val-required="*" data-val-email="Not Valid">
+            <span class="field-validation-valid" data-valmsg-for="EMAIL" data-valmsg-replace="true"></span>
+        </div>
+
+        <div class="mt-10">
+            <textarea class="single-textarea" name="message" placeholder="Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Message'" required data-val="true" data-val-required="*"></textarea>
+            <span class="field-validation-valid" data-valmsg-for="message" data-valmsg-replace="true"></span>
+        </div>
+        <!-- For Gradient Border Use -->
+        <!-- <div class="mt-10">
+            <div class="primary-input">
+                <input id="primary-input" type="text" name="first_name" placeholder="Primary color" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Primary color'">
+                <label for="primary-input"></label>
+            </div>
+        </div> -->
+        <button type="submit" class="btn">Send</button>
+        @if(ViewBag.MailSent != null && ViewBag.MailSent)
+        {
+          <div>Mail Sent!</div>
+        }
+    </form>
+</div>
