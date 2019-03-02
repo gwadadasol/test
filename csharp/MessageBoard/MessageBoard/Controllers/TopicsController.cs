@@ -21,6 +21,7 @@ namespace MessageBoard.Controllers
         {
             _repo = repo;
         }
+        [HttpGet]
         public IEnumerable<Topic> Get(bool includeReplies = false)
         {
             IEnumerable<Topic> results;
