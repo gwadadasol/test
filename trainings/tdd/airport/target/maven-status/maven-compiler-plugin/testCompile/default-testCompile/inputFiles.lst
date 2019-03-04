@@ -1,0 +1,7 @@
+/home/pav/dev/repository/test/trainings/tdd/airport/src/test/java/com/pluralsight/tddjunit5/airconditioning/AirConditioningSystemTest.java
+/home/pav/dev/repository/test/trainings/tdd/airport/src/test/java/com/pluralsight/tddjunit5/MockitoExtension.java
+/home/pav/dev/repository/test/trainings/tdd/airport/src/test/java/com/pluralsight/tddjunit5/database/StatisticsTest.java
+/home/pav/dev/repository/test/trainings/tdd/airport/src/test/java/com/pluralsight/tddjunit5/airport/AirportTest.java
+/home/pav/dev/repository/test/trainings/tdd/airport/src/test/java/com/pluralsight/tddjunit5/airconditioning/ThermometerTest.java
+/home/pav/dev/repository/test/trainings/tdd/airport/src/test/java/com/pluralsight/tddjunit5/mileage/MileageTest.java
+/home/pav/dev/repository/test/trainings/tdd/airport/src/test/java/com/pluralsight/tddjunit5/database/DatabaseAccessTest.java
