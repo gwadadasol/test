@@ -9,7 +9,7 @@ public class Application {
 
         ApplicationContext appContext = new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        CustomerService service = appContext.getBean("customerService", CustomerService.class);
+            CustomerService service = appContext.getBean("customerService", CustomerService.class);
         System.out.println(service);
 
         CustomerService service2 = appContext.getBean("customerService", CustomerService.class);
