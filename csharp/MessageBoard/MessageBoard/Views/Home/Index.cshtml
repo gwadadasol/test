@@ -1,0 +1,17 @@
+﻿@model IEnumerable<MessageBoard.Data.Topic>
+@{
+    ViewBag.Title = "Home Page";
+    ViewBag.InitModule = "homeIndex";
+}
+
+@section scripts{
+    <script src="~/js/home-index.min.js"></script>
+}
+
+<div data-ng-view=""></div>
+
+@*@foreach(var topic in Model)
+    {
+        <div> @topic.Title</div>
+        <div>-- @topic.Body</div>
+    }*@

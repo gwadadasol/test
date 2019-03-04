@@ -1,0 +1,20 @@
+[
+  {
+    "outputFileName": "Scripts/hoverIntent.min.js",
+    "inputFiles": [
+      "Scripts/hoverIntent.js"
+    ]
+  },
+  {
+    "outputFileName": "Content/Site.min.css",
+    "inputFiles": [
+      "Content/Site.css"
+    ]
+  },
+  {
+    "outputFileName": "js/home-index.min.js",
+    "inputFiles": [
+      "js/home-index.js"
+    ]
+  }
+]
