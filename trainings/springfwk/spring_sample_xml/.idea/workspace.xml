@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2aea499-0f46-424d-b82b-968fa286ab82" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../springboot-react/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../springboot-react/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -154,7 +154,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="5">
+  <component name="ProjectFrameBounds" extendedState="4">
     <option name="y" value="27" />
     <option name="width" value="950" />
     <option name="height" value="1016" />
@@ -185,7 +185,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../springboot-react" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../bankmanagertool" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -223,7 +223,7 @@
     <option name="allowAutoConfigurationMode" value="true" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="950" height="1016" extended-state="5" />
+    <frame x="0" y="27" width="950" height="1016" extended-state="4" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.53097343" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
