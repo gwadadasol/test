@@ -6,8 +6,11 @@ import com.pavcoding.dev.bankmanager.repository.HibernateAccountRepositoryImpl;
 
 import java.util.List;
 
-public class AccountServiceImpl {
+public class AccountServiceImpl implements AccountService {
     AccountRepository accountRepository = new HibernateAccountRepositoryImpl();
 
-    public List<Account> 
+    @Override
+    public List<Account> findAll(){
+        return accountRepository.findAll();
+    }
 }

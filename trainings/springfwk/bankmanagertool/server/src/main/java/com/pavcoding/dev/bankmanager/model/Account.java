@@ -1,8 +1,12 @@
 package com.pavcoding.dev.bankmanager.model;
 
+import org.springframework.stereotype.Component;
+
+import javax.persistence.Entity;
 import java.util.Date;
 import java.util.List;
 
+@Entity
 public class Account {
     String accountNumber;
     Date creationDate;

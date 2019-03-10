@@ -1,24 +1,35 @@
 package com.pavcoding.dev.bankmanager.model;
 
+import org.springframework.stereotype.Component;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.Date;
 
+
+@Entity
 public class Operation {
-    int id;
+
+    @Id
+    @GeneratedValue
+    Long id;
     Date date;
     String description;
     double amount;
 
-    public Operation(Date date, String description, double amount) {
+    public Operation(Long id, Date date, String description, double amount) {
+        this.id = id;
         this.date = date;
         this.description = description;
         this.amount = amount;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
