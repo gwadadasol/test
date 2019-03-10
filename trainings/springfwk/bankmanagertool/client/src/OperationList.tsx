@@ -1,25 +1,28 @@
 import * as React from 'react';
 import './App.css';
 
+import {Table, TableBody, TableCell, TableHead, TableRow} from '@material-ui/core';
+
 
 const data = [
-    {date: 'Mon', title: 2200, amount: 3400},
-    {date: 'Tue', title: 1280, amount: 2398},
-    {date: 'Wed', title: 5000, amount: 4300},
-    {date: 'Thu', title: 4780, amount: 2908},
-    {date: 'Fri', title: 5890, amount: 4800},
-    {date: 'Sat', title: 4390, amount: 3800},
-    {date: 'Sun', title: 4490, amount: 4300},
+    {id:1, date: '21/01/2019', title: 'Retrait', amount: -340},
+    {id:2, date: '22/01/2019', title: 'Loyer', amount: -2500},
+    {id:3, date: '23/01/2019', title: 'Ecole', amount: -4300},
+    {id:4, date: '24/01/2019', title: 'Taste', amount: -300},
+    {id:5, date: '25/01/2019', title: 'AEON', amount: -200},
+    {id:6, date: '26/01/2019', title: 'Chaussures', amount: -500},
+    {id:7, date: '27/01/2019', title: 'Salaire', amount: 5000},
 ];
 
 
 class OperationList extends React.Component<{}, any> {
-    public constructor(props: any){
+    public constructor(props: any) {
         super(props);
 
         this.state = {
-            operations: [],
-            isLoading: true
+            isLoading: true,
+            operations: []
+
         }
     }
 
@@ -27,7 +30,7 @@ class OperationList extends React.Component<{}, any> {
     public componentDidMount() {
         this.setState({isLoading: true});
 
-        this.setState(this.props.operations:data, this.props.isLoading:false);
+        this.setState({operations: data, isLoading: false});
 
 
         // fetch('http://localhost:8080/good-beers')
@@ -36,7 +39,7 @@ class OperationList extends React.Component<{}, any> {
     }
 
     public render() {
-        const { operations, isLoading}  = this.state;
+        const {operations, isLoading} = this.state;
 
         if (isLoading) {
             return <p>Loading...</p>;
@@ -44,17 +47,49 @@ class OperationList extends React.Component<{}, any> {
 
         return (
             <div>
-                <h2> Operation List</h2>
-        {beers.map((beer: any) =>
-            <div key={beer.id}>
-            {beer.name}<br/>
-            <GiphyImage name={beer.name} />
-        </div>
-        )}
-        </div>
+                <div>
+                    <h2> Operation List</h2>
+                </div>
+                <div>
+                    Period: [Debut] - [Fin]
+                </div>
+                <div>
+                    Current Balance: 200000 <br/>
+                    Initial Balance:250000
+                </div>
+                <div>
 
-    );
+                    <Table className={"Operation List"}>
+                        <TableHead>
+                            <TableRow>
+                                <TableCell align="right">Date</TableCell>
+                                <TableCell align="right">Title</TableCell>
+                                <TableCell align="right">Amount</TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+
+                            {operations.map((operation: any) =>
+
+                                    <TableRow key={operation.id}>
+                                        <TableCell component="th" scope="row">
+                                            {operation.date}
+                                        </TableCell>
+                                        <TableCell align="right">{operation.title}</TableCell>
+                                        <TableCell align="right">{operation.amount}</TableCell>
+                                    </TableRow>
+
+                                // <div key={operation.id}>
+                                //     {operation.title}<br/>
+                                // </div>
+                            )}
+                        </TableBody>
+                    </Table>
+                </div>
+            </div>
+
+        );
     }
 }
 
-export default BeerList;
+export default OperationList;
