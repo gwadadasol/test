@@ -1,7 +1,8 @@
 import * as React from 'react';
 import './App.css';
 
-import {Table, TableBody, TableCell, TableHead, TableRow} from '@material-ui/core';
+import { FormControl, InputLabel,  MenuItem, Select, Table, TableBody, TableCell, TableHead, TableRow} from '@material-ui/core';
+import {log} from 'console';
 
 
 const data = [
@@ -15,11 +16,12 @@ const data = [
 ];
 
 
-class OperationList extends React.Component<{}, any> {
+class OperationList extends React.Component<any, any> {
     public constructor(props: any) {
         super(props);
 
         this.state = {
+            accounts: [],
             isLoading: true,
             operations: []
 
@@ -33,13 +35,19 @@ class OperationList extends React.Component<{}, any> {
         this.setState({operations: data, isLoading: false});
 
 
-        // fetch('http://localhost:8080/good-beers')
-        //     .then(response => response.json())
-        //     .then(data => this.setState({beers:data, isLoading:false}));
+        fetch('http://localhost:8080/accounts')
+             .then(response => response.json())
+             .then(value => this.setState({accounts:value, isLoading:false}));
     }
 
+    public handleChange = event => {
+        this.setState({ [event.target.name]: event.target.value });
+        console.log(event.target.name);
+        console.log(this.state.accounts[event.target.value-1]);
+    };
+
     public render() {
-        const {operations, isLoading} = this.state;
+        const {accounts, isLoading, operations} = this.state;
 
         if (isLoading) {
             return <p>Loading...</p>;
@@ -47,6 +55,7 @@ class OperationList extends React.Component<{}, any> {
 
         return (
             <div>
+                <div>Selected account: {this.props.account}</div>
                 <div>
                     <h2> Operation List</h2>
                 </div>
@@ -57,6 +66,7 @@ class OperationList extends React.Component<{}, any> {
                     Current Balance: 200000 <br/>
                     Initial Balance:250000
                 </div>
+
                 <div>
 
                     <Table className={"Operation List"}>

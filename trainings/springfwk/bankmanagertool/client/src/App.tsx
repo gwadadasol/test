@@ -1,9 +1,7 @@
 import * as React from 'react';
 import './App.css';
 
-import logo from './logo.svg';
-
-import BeerList from "./BeerList";
+import AccountListSelect from "./AccountListSelect";
 
 import OperationList from "./OperationList";
 
@@ -20,6 +18,27 @@ const data = [
 ];
 
 class App extends React.Component<{}, any> {
+    public constructor(props: any){
+        super(props);
+
+        this.state = {
+            activeAccount: 0
+        };
+
+        console.log ( "constructor");
+        console.log("App->constructor->Id: " + this.state.activeAccount);
+
+        this.handleSelectAccount = this.handleSelectAccount.bind(this);
+    }
+
+    public handleSelectAccount(id) {
+        this.setState({
+            activeAccount:id
+        });
+        console.log("App->handleSelectAccount->Id: " + this.state.activeAccount);
+        console.log("App->handleSelectAccount->Id: " + id);
+    };
+
 
     public render() {
         return (
@@ -48,7 +67,8 @@ class App extends React.Component<{}, any> {
                     {/*<BeerList/>*/}
                 {/*</div>*/}
                 <div>
-                    <OperationList/>
+                    <AccountListSelect onSelect={this.handleSelectAccount} />
+                    <OperationList account={this.state.activeAccount}/>
                 </div>
             </div>
         );
