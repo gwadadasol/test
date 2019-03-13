@@ -1,12 +1,7 @@
 package com.pavcoding.dev.bankmanager.repository;
 
 import com.pavcoding.dev.bankmanager.model.Account;
-import org.springframework.context.annotation.Bean;
-import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
-
-@RepositoryRestResource
-public interface AccountRepository {
-    List<Account> findAll();
+public interface AccountRepository extends JpaRepository<Account, Long> {
 }

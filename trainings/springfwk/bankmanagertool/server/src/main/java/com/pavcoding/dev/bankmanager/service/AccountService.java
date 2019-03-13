@@ -5,5 +5,5 @@ import com.pavcoding.dev.bankmanager.model.Account;
 import java.util.List;
 
 public interface AccountService {
-    List<Account> findAll();
+//    List<Account> findAll();
 }

@@ -1,66 +1,39 @@
 package com.pavcoding.dev.bankmanager.model;
 
-import org.springframework.stereotype.Component;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+@Data
+@NoArgsConstructor
 @Entity
 public class Account {
-    String accountNumber;
-    Date creationDate;
-    float initialBalance;
-    float currentBalance;
-    List<Operation> operationList;
+
+    @Id
+    @GeneratedValue
+    private Long id;
+    private String accountNumber;
+    private Date creationDate;
+    private float initialBalance;
+    private float currentBalance;
+
+    @OneToMany( targetEntity=Operation.class) // , fetch= FetchType.EAGER
+    private List<Operation> operations = new ArrayList<>();;
 
     public Account(String accountNumber, Date creationDate, float initialBalance) {
         this.accountNumber = accountNumber;
         this.creationDate = creationDate;
         this.initialBalance = initialBalance;
-    }
-
-    public String getAccountNumber() {
-        return accountNumber;
-    }
-
-    public void setAccountNumber(String accountNumber) {
-        this.accountNumber = accountNumber;
-    }
-
-    public Date getCreationDate() {
-        return creationDate;
-    }
-
-    public void setCreationDate(Date creationDate) {
-        this.creationDate = creationDate;
-    }
-
-    public float getInitialBalance() {
-        return initialBalance;
-    }
-
-    public void setInitialBalance(float initialBalance) {
-        this.initialBalance = initialBalance;
-    }
-
-    public float getCurrentBalance() {
-        return currentBalance;
-    }
-
-    public void setCurrentBalance(float currentBalance) {
-        this.currentBalance = currentBalance;
-    }
-
-    public List<Operation> getOperationList() {
-        return operationList;
-    }
-
-    public void setOperationList(List<Operation> operationList) {
-        this.operationList = operationList;
+        this.currentBalance = initialBalance;
     }
 
     public boolean addOperation(Operation operation){
-        return operationList.add(operation);
+        return operations.add(operation);
     }
 }
