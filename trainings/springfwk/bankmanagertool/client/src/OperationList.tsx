@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './App.css';
 
-import {Table, TableBody, TableCell, TableHead, TableRow, TextField} from '@material-ui/core';
+import {Table, TableBody, TableCell, TableHead, TableRow} from '@material-ui/core';
 
 const styles = theme => ({
     container: {
@@ -30,17 +30,17 @@ class OperationList extends React.Component<any, any> {
 
     public render() {
         const operations = this.props.operations;
-        const {classes} = this.props;
 
         return (
             <div>
-                <div>Selected account: {this.props.accountNumber}</div>
+                {/*<div>Selected account: {this.props.accountNumber}</div>*/}
                 <div>
                     <h2> Operation List</h2>
                 </div>
                 <div>
-                    Period: [{this.props.startPeriod}] - [{this.props.endPeriod}]
+                    Period: {this.displayDate(this.props.startPeriod) } - {this.displayDate(this.props.endPeriod) }
                 </div>
+
                 <div>
                     Current Balance: {this.props.currentBalance}<br/>
                     Initial Balance:{this.props.initialBalance}
@@ -58,10 +58,10 @@ class OperationList extends React.Component<any, any> {
                         </TableHead>
                         <TableBody>
 
-                            {this.props.operations.map((operation: any) =>
+                            {   operations.map((operation: any) =>
 
                                 <TableRow key={operation.id}>
-                                    <TableCell component="th" scope="row">{operation.date}</TableCell>
+                                    <TableCell component="th" scope="row">{this.displayDate(operation.date)}</TableCell>
                                     <TableCell align="right">{operation.description}</TableCell>
                                     <TableCell align="right">{operation.amount}</TableCell>
                                 </TableRow>
@@ -73,6 +73,17 @@ class OperationList extends React.Component<any, any> {
 
         );
     }
+
+    private displayDate(value){
+        return (value!== undefined) ?
+            new Intl.DateTimeFormat('en-GB', {
+                day: '2-digit',
+                month: 'long',
+                year: 'numeric'
+            }).format(new Date(value)) : "";
+    }
+
+
 }
 
 export default OperationList;
