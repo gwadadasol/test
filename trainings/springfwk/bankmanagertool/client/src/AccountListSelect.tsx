@@ -31,7 +31,6 @@ import {resolveAny} from "dns";
         this.state = {
             accounts: [],
             isLoading: true
-            // selectedAccount: props.activeAccount
         };
     }
 
@@ -45,14 +44,7 @@ import {resolveAny} from "dns";
     }
 
     public handleChange = event => {
-        this.setState({[event.target.name]: event.target.value});
-        console.log("name: " + event.target.name + " => " + event.target.value);
-        console.log(this.state.accounts[event.target.value - 1]);
-        console.log("selected Account1: " + this.state.selected);
-        // this.setState({selected: event.target.value});
-        console.log("selected Account2: " + this.state.selected );
-
-        this.props.onSelect(event.target.value);
+        this.props.onSelect(event.target.key, event.target.value);
     }
 
 
@@ -73,12 +65,10 @@ import {resolveAny} from "dns";
                                 native={false}
                                 value={3}
                                 onChange={this.handleChange}
-                                // onChange={ e => this.props.onSelect(e)}
-
                                 inputProps={{id: 'account-selected',name: 'account'}}
                             >
                                 {accounts.map((account: any) =>
-                                    <MenuItem key={account.id} value={account.id}>{account.accountNumber}</MenuItem>
+                                    <MenuItem key={account.id} value={account}>{account.accountNumber}</MenuItem>
                                 )}
 
                             </Select>
