@@ -14,11 +14,22 @@ const styles = theme => ({
     menu: {
         width: 200,
     },
+    root: {
+        marginTop: theme.spacing.unit * 3,
+        overflowX: 'auto',
+        width: '100%',
+    },
+
     textField: {
         marginLeft: theme.spacing.unit,
         marginRight: theme.spacing.unit,
     },
 });
+
+const tableStyle = {
+    maxWidth: 1400,
+    minWidth: 700
+};
 
 
 class OperationList extends React.Component<any, any> {
@@ -46,13 +57,13 @@ class OperationList extends React.Component<any, any> {
                     Initial Balance:{this.props.initialBalance}
                 </div>
 
-                <div>
+                <div >
 
-                    <Table className={"Operation List"}>
+                    <Table style={tableStyle}>
                         <TableHead>
                             <TableRow>
                                 <TableCell align="right">Date</TableCell>
-                                <TableCell align="right">Title</TableCell>
+                                <TableCell align="right">Description</TableCell>
                                 <TableCell align="right">Amount</TableCell>
                             </TableRow>
                         </TableHead>
