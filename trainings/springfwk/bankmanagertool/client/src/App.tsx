@@ -1,9 +1,13 @@
 import * as React from 'react';
-import './App.css';
+// import './App.css';
 
 import AccountListSelect from "./AccountListSelect";
 
 import OperationList from "./OperationList";
+
+import Button from '@material-ui/core/Button';
+
+import { withStyles } from '@material-ui/core/styles';
 
 // import {CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis} from 'recharts/lib/index';
 
@@ -17,14 +21,26 @@ import OperationList from "./OperationList";
 //     {name: 'Sun', Visits: 4490, Orders: 4300},
 // ];
 
-class App extends React.Component<{}, any> {
+
+const styles = theme => ({
+    button: {
+        margin: theme.spacing.unit,
+    },
+    input: {
+        display: 'none',
+    },
+});
+
+
+class App extends React.Component<any, any> {
     public constructor(props: any) {
         super(props);
 
         this.state = {
             activeAccountId: 0,
+            activeView: 'l',
             operations: [],
-            selectectAccount: []
+            selectectAccount: [],
         };
 
         this.handleSelectAccount = this.handleSelectAccount.bind(this);
@@ -40,6 +56,14 @@ class App extends React.Component<{}, any> {
         });
     }
 
+    public onClickButtonMenuLoad = () => {
+        this.setState({ activeView: 'l' });
+    }
+
+    public onClickButtonMenuView = () => {
+        this.setState({ activeView: 'v' });
+    }
+
     public render() {
         const initialBalance = this.state.initialBalance;
         const currentBalance = this.state.currentBalance;
@@ -48,37 +72,94 @@ class App extends React.Component<{}, any> {
         const startPeriod = this.state.selectectAccount.startPeriod;
         const endPeriod = this.state.selectectAccount.endPeriod;
 
-        return (
-            <div className="App">
-                <div>
-                    <AccountListSelect onSelect={this.handleSelectAccount}/>
-                    <OperationList currentBalance={currentBalance}
-                                   initialBalance={initialBalance}
-                                   operations={operations}
-                                   accountNumber={accountNumber}
-                                   startPeriod = {startPeriod}
-                                   endPeriod = {endPeriod}
-                    />
-                </div>
-                <div>
-                    {/*// 99% per https://github.com/recharts/recharts/issues/172*/}
-                    {/*<ResponsiveContainer width="99%" height={320}>*/}
-                    {/*<LineChart data={data}>*/}
-                    {/*<XAxis dataKey="name"/>*/}
-                    {/*<YAxis/>*/}
-                    {/*<CartesianGrid vertical={false} strokeDasharray="3 3"/>*/}
-                    {/*<Tooltip/>*/}
-                    {/*<Legend/>*/}
-                    {/*<Line type="monotone" dataKey="Visits" stroke="#82ca9d"/>*/}
-                    {/*<Line type="monotone" dataKey="Orders" stroke="#8884d8" activeDot={{r: 8}}/>*/}
-                    {/*</LineChart>*/}
-                    {/*</ResponsiveContainer>*/}
+        const {classes} = this.props;
 
 
+        if (this.state.activeView === 'l') {
+            return (
+                <div className="App">
+                    <div>
+                        <Button variant="contained"
+                                color="primary"
+                                className={classes.button}
+                                onClick={this.onClickButtonMenuLoad}
+                        > Load Data</Button>
+
+                        <Button variant="contained"
+                                color="primary"
+                                className={classes.button}
+                                onClick={this.onClickButtonMenuView}
+                        > View Data</Button>
+                    </div>
+                    <div>
+                        {this.state.activeView}
+                    </div>
+
+                    <div>
+                            <AccountListSelect onSelect={this.handleSelectAccount}/>
+                    </div>
+                    <div>
+
+                        <OperationList currentBalance={currentBalance}
+                                       initialBalance={initialBalance}
+                                       operations={operations}
+                                       accountNumber={accountNumber}
+                                       startPeriod={startPeriod}
+                                       endPeriod={endPeriod}
+                        />
+
+                    </div>
+                    <div>
+                        {/*// 99% per https://github.com/recharts/recharts/issues/172*/}
+                        {/*<ResponsiveContainer width="99%" height={320}>*/}
+                        {/*<LineChart data={data}>*/}
+                        {/*<XAxis dataKey="name"/>*/}
+                        {/*<YAxis/>*/}
+                        {/*<CartesianGrid vertical={false} strokeDasharray="3 3"/>*/}
+                        {/*<Tooltip/>*/}
+                        {/*<Legend/>*/}
+                        {/*<Line type="monotone" dataKey="Visits" stroke="#82ca9d"/>*/}
+                        {/*<Line type="monotone" dataKey="Orders" stroke="#8884d8" activeDot={{r: 8}}/>*/}
+                        {/*</LineChart>*/}
+                        {/*</ResponsiveContainer>*/}
+
+
+                    </div>
                 </div>
-            </div>
-        );
+            );
+        }else{
+            return (
+                <div className="App">
+                    <div>
+                        <Button variant="contained"
+                                color="primary"
+                                className={classes.button}
+                                onClick={this.onClickButtonMenuLoad}
+                        > Load Data</Button>
+
+                        <Button variant="contained"
+                                color="primary"
+                                className={classes.button}
+                                onClick={this.onClickButtonMenuView}
+                        > View Data</Button>
+                    </div>
+                    <div>
+                        {this.state.activeView}
+                    </div>
+
+                    <div>
+                        {() => (this.state.activeView === 'l') ?
+                            <AccountListSelect onSelect={this.handleSelectAccount}/>
+                            : null}
+                    </div>
+                <div>
+                    {"Nothing to display"}
+                </div>
+                </div>
+            );
+        }
     }
+
 }
 
-export default App;
+export default withStyles(styles)(App);

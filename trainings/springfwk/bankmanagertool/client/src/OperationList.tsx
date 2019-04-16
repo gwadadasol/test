@@ -3,6 +3,10 @@ import './App.css';
 
 import {Table, TableBody, TableCell, TableHead, TableRow} from '@material-ui/core';
 
+import 'typeface-roboto';
+
+import Typography from '@material-ui/core/Typography';
+
 const styles = theme => ({
     container: {
         display: 'flex',
@@ -31,6 +35,10 @@ const tableStyle = {
     minWidth: 700
 };
 
+const dotted = {
+    'border-style': 'dotted',
+};
+
 
 class OperationList extends React.Component<any, any> {
     public constructor(props: any) {
@@ -43,45 +51,49 @@ class OperationList extends React.Component<any, any> {
         const operations = this.props.operations;
 
         return (
-            <div>
-                {/*<div>Selected account: {this.props.accountNumber}</div>*/}
-                <div>
-                    <h2> Operation List</h2>
-                </div>
-                <div>
-                    Period: {this.displayDate(this.props.startPeriod) } - {this.displayDate(this.props.endPeriod) }
-                </div>
 
-                <div>
+            <div>
+
+                <Typography variant="h4">Operation List</Typography>
+                <Typography variant="h5"
+                            align={"center"}> Period: {this.displayDate(this.props.startPeriod)} - {this.displayDate(this.props.endPeriod)} </Typography>
+
+                <Typography variant="h5">
                     Current Balance: {this.props.currentBalance}<br/>
                     Initial Balance:{this.props.initialBalance}
-                </div>
+                </Typography>
 
-                <div >
+                <div>
 
                     <Table style={tableStyle}>
                         <TableHead>
                             <TableRow>
-                                <TableCell align="right">Date</TableCell>
-                                <TableCell align="right">Description</TableCell>
-                                <TableCell align="right">Amount</TableCell>
+                                <TableCell align="center"><Typography variant="h6">Date</Typography></TableCell>
+                                <TableCell align="center"><Typography variant="h6">Description</Typography></TableCell>
+                                <TableCell align="center"><Typography variant="h6">Amount</Typography></TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
 
-                            {   operations.map((operation: any) =>
+                            {operations.map((operation: any) =>
 
                                 <TableRow key={operation.id}>
-                                    <TableCell component="th" scope="row">{this.displayDate(operation.date)}</TableCell>
-                                    <TableCell align="right">{operation.description}</TableCell>
-                                    <TableCell align="right">{operation.amount}</TableCell>
+                                    <TableCell component="th" scope="row">
+                                        <Typography variant="body1">{this.displayDate(operation.date)}</Typography>
+                                    </TableCell>
+                                    <TableCell align="right">
+                                        <Typography variant="body1">{operation.description}</Typography>
+                                    </TableCell>
+                                    <TableCell align="right">
+                                        <Typography variant="body1">{operation.amount}</Typography>
+                                    </TableCell>
                                 </TableRow>
                             )}
                         </TableBody>
                     </Table>
                 </div>
-            </div>
 
+            </div>
         );
     }
 
