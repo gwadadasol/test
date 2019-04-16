@@ -9,6 +9,8 @@ import Button from '@material-ui/core/Button';
 
 import { withStyles } from '@material-ui/core/styles';
 
+// import FileLoader from "./FileLoader";
+
 // import {CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis} from 'recharts/lib/index';
 
 // const data = [
@@ -38,7 +40,7 @@ class App extends React.Component<any, any> {
 
         this.state = {
             activeAccountId: 0,
-            activeView: 'l',
+            activeView: '',
             operations: [],
             selectectAccount: [],
         };
@@ -64,6 +66,11 @@ class App extends React.Component<any, any> {
         this.setState({ activeView: 'v' });
     }
 
+    public onClickButtonSumitFileSelection = (event) =>{
+        console.log(event);
+
+    };
+
     public render() {
         const initialBalance = this.state.initialBalance;
         const currentBalance = this.state.currentBalance;
@@ -83,13 +90,13 @@ class App extends React.Component<any, any> {
                                 color="primary"
                                 className={classes.button}
                                 onClick={this.onClickButtonMenuLoad}
-                        > Load Data</Button>
+                        > Show Accounts</Button>
 
                         <Button variant="contained"
                                 color="primary"
                                 className={classes.button}
                                 onClick={this.onClickButtonMenuView}
-                        > View Data</Button>
+                        > Upload Data</Button>
                     </div>
                     <div>
                         {this.state.activeView}
@@ -127,7 +134,7 @@ class App extends React.Component<any, any> {
                     </div>
                 </div>
             );
-        }else{
+        }else if (this.state.activeView === 'v') {
             return (
                 <div className="App">
                     <div>
@@ -135,28 +142,43 @@ class App extends React.Component<any, any> {
                                 color="primary"
                                 className={classes.button}
                                 onClick={this.onClickButtonMenuLoad}
-                        > Load Data</Button>
+                        > Show Accounts</Button>
 
                         <Button variant="contained"
                                 color="primary"
                                 className={classes.button}
                                 onClick={this.onClickButtonMenuView}
-                        > View Data</Button>
+                        > Upload Data</Button>
+                    </div>
+                    <div>
+                        {/*<FileLoader />*/}
+                    </div>
+                </div>
+
+            );
+        }
+        else{
+            return (
+                <div className="App">
+                    <div>
+                        <Button variant="contained"
+                                color="primary"
+                                className={classes.button}
+                                onClick={this.onClickButtonMenuLoad}
+                        > Show Accounts</Button>
+
+                        <Button variant="contained"
+                                color="primary"
+                                className={classes.button}
+                                onClick={this.onClickButtonMenuView}
+                        > Upload Data</Button>
                     </div>
                     <div>
                         {this.state.activeView}
                     </div>
-
-                    <div>
-                        {() => (this.state.activeView === 'l') ?
-                            <AccountListSelect onSelect={this.handleSelectAccount}/>
-                            : null}
-                    </div>
-                <div>
-                    {"Nothing to display"}
-                </div>
                 </div>
             );
+
         }
     }
 

@@ -1,15 +1,11 @@
 package com.pavcoding.dev.bankmanager.controller;
 
-import com.pavcoding.dev.bankmanager.model.DBFile;
 import com.pavcoding.dev.bankmanager.payload.UploadFileResponse;
-import com.pavcoding.dev.bankmanager.repository.DBFileRepository;
 import com.pavcoding.dev.bankmanager.repository.FileLoader;
-import com.pavcoding.dev.bankmanager.service.DBFileStorageService;
 import com.pavcoding.dev.bankmanager.service.FileStorageService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -33,10 +29,6 @@ public class FileController {
     @Autowired
     private FileStorageService fileStorageService;
 
-
-    @Autowired
-    private DBFileStorageService dbFileStorageService;
-
     @PostMapping("/uploadFile")
     public UploadFileResponse uploadFile(@RequestParam("file") MultipartFile file){
 
@@ -55,20 +47,6 @@ public class FileController {
 
     }
 
-    @PostMapping("/uploadFileDB")
-    public UploadFileResponse uploadFileDB(@RequestParam("file") MultipartFile file){
-
-        DBFile dbFile = dbFileStorageService.storeFile(file);
-
-        String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-                .path("/downloadFile/")
-                .path(dbFile.getId())
-                .toUriString();
-
-        return new UploadFileResponse(dbFile.getFileName(), fileDownloadUri,file.getContentType(),file.getSize());
-
-    }
-
     @PostMapping("/uploadMultipleFiles")
     public List<UploadFileResponse> uploadMultipleFile(@RequestParam("files") MultipartFile[] files){
         return Arrays.asList(files)
@@ -76,26 +54,6 @@ public class FileController {
                 .map(file -> uploadFile(file))
                 .collect(Collectors.toList());
 
-    }
-
-    @PostMapping("/uploadMultipleFilesDB")
-    public List<UploadFileResponse> uploadMultipleFileDB(@RequestParam("files") MultipartFile[] files){
-        return Arrays.asList(files)
-                .stream()
-                .map(file -> uploadFileDB(file))
-                .collect(Collectors.toList());
-
-    }
-
-    @GetMapping("/downloadFileDB/{fileName:.+}")
-    public ResponseEntity<Resource> downloadFileDB (@PathVariable String fileId, HttpServletRequest request){
-
-        DBFile dbFile = dbFileStorageService.getFile(fileId);
-
-        return ResponseEntity.ok()
-                .contentType(MediaType.parseMediaType(dbFile.getFileType()))
-                .header(HttpHeaders.CONTENT_DISPOSITION,"attachment; filename=\"" + dbFile.getFileName() + "\"")
-                .body(new ByteArrayResource(dbFile.getData()));
     }
 
     @GetMapping("/downloadFile/{fileName:.+}")
