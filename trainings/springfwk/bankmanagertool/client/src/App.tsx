@@ -9,19 +9,7 @@ import Button from '@material-ui/core/Button';
 
 import { withStyles } from '@material-ui/core/styles';
 
-// import FileLoader from "./FileLoader";
-
-// import {CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis} from 'recharts/lib/index';
-
-// const data = [
-//     {name: 'Mon', Visits: 2200, Orders: 3400},
-//     {name: 'Tue', Visits: 1280, Orders: 2398},
-//     {name: 'Wed', Visits: 5000, Orders: 4300},
-//     {name: 'Thu', Visits: 4780, Orders: 2908},
-//     {name: 'Fri', Visits: 5890, Orders: 4800},
-//     {name: 'Sat', Visits: 4390, Orders: 3800},
-//     {name: 'Sun', Visits: 4490, Orders: 4300},
-// ];
+import FileLoader from "./FileLoader";
 
 
 const styles = theme => ({
@@ -43,6 +31,7 @@ class App extends React.Component<any, any> {
             activeView: '',
             operations: [],
             selectectAccount: [],
+            filepath: ""
         };
 
         this.handleSelectAccount = this.handleSelectAccount.bind(this);
@@ -68,8 +57,27 @@ class App extends React.Component<any, any> {
 
     public onClickButtonSumitFileSelection = (event) =>{
         console.log(event);
-
     };
+
+    public onSubmitFileLoader = (file) =>{
+        console.log("App -> onSubmitFileLoader: " + file);
+
+        const   data = new FormData();
+        data.append("file", file);
+
+        fetch('http://localhost:8080/uploadFile', {
+            method: 'POST',
+            body: data,
+            mode: 'no-cors',
+            headers:{
+                "Content-Type": "multipart/form-data",
+
+            }
+        });
+            // .then(response => response.json())
+            // .then(value => console.log(value));
+
+    }
 
     public render() {
         const initialBalance = this.state.initialBalance;
@@ -78,13 +86,114 @@ class App extends React.Component<any, any> {
         const accountNumber = this.state.selectectAccount.accountNumber;
         const startPeriod = this.state.selectectAccount.startPeriod;
         const endPeriod = this.state.selectectAccount.endPeriod;
+        const filepath = this.state.filepath;
 
         const {classes} = this.props;
 
 
-        if (this.state.activeView === 'l') {
-            return (
-                <div className="App">
+        // if (this.state.activeView === 'l') {
+        //     return (
+        //         <div className="App">
+        //             <div>
+        //                 <Button variant="contained"
+        //                         color="primary"
+        //                         className={classes.button}
+        //                         onClick={this.onClickButtonMenuLoad}
+        //                 > Show Accounts</Button>
+        //
+        //                 <Button variant="contained"
+        //                         color="primary"
+        //                         className={classes.button}
+        //                         onClick={this.onClickButtonMenuView}
+        //                 > Upload Data</Button>
+        //             </div>
+        //             <div>
+        //                 {this.state.activeView}
+        //             </div>
+        //
+        //             <div>
+        //                 <AccountListSelect onSelect={this.handleSelectAccount}/>
+        //             </div>
+        //             <div>
+        //
+        //                 <OperationList currentBalance={currentBalance}
+        //                                initialBalance={initialBalance}
+        //                                operations={operations}
+        //                                accountNumber={accountNumber}
+        //                                startPeriod={startPeriod}
+        //                                endPeriod={endPeriod}
+        //                 />
+        //
+        //             </div>
+        //             <div>
+        //                 {/*// 99% per https://github.com/recharts/recharts/issues/172*/}
+        //                 {/*<ResponsiveContainer width="99%" height={320}>*/}
+        //                 {/*<LineChart data={data}>*/}
+        //                 {/*<XAxis dataKey="name"/>*/}
+        //                 {/*<YAxis/>*/}
+        //                 {/*<CartesianGrid vertical={false} strokeDasharray="3 3"/>*/}
+        //                 {/*<Tooltip/>*/}
+        //                 {/*<Legend/>*/}
+        //                 {/*<Line type="monotone" dataKey="Visits" stroke="#82ca9d"/>*/}
+        //                 {/*<Line type="monotone" dataKey="Orders" stroke="#8884d8" activeDot={{r: 8}}/>*/}
+        //                 {/*</LineChart>*/}
+        //                 {/*</ResponsiveContainer>*/}
+        //
+        //
+        //             </div>
+        //         </div>
+        //     );
+        // }else if (this.state.activeView === 'v') {
+        //     return (
+        //         <div className="App">
+        //             <div>
+        //                 <Button variant="contained"
+        //                         color="primary"
+        //                         className={classes.button}
+        //                         onClick={this.onClickButtonMenuLoad}
+        //                 > Show Accounts</Button>
+        //
+        //                 <Button variant="contained"
+        //                         color="primary"
+        //                         className={classes.button}
+        //                         onClick={this.onClickButtonMenuView}
+        //                 > Upload Data</Button>
+        //             </div>
+        //             <div>
+        //                 <FileLoader />
+        //             </div>
+        //         </div>
+        //
+        //     );
+        // }
+        // else{
+        //     return (
+        //         <div className="App">
+        //             <div>
+        //                 <Button variant="contained"
+        //                         color="primary"
+        //                         className={classes.button}
+        //                         onClick={this.onClickButtonMenuLoad}
+        //                 > Show Accounts</Button>
+        //
+        //                 <Button variant="contained"
+        //                         color="primary"
+        //                         className={classes.button}
+        //                         onClick={this.onClickButtonMenuView}
+        //                 > Upload Data</Button>
+        //             </div>
+        //             <div>
+        //                 {this.state.activeView}
+        //             </div>
+        //         </div>
+        //     );
+        //
+        // }
+
+        return(
+            <div className="App">
+        {this.state.activeView === 'l' &&  (
+                <div>
                     <div>
                         <Button variant="contained"
                                 color="primary"
@@ -103,7 +212,7 @@ class App extends React.Component<any, any> {
                     </div>
 
                     <div>
-                            <AccountListSelect onSelect={this.handleSelectAccount}/>
+                        <AccountListSelect onSelect={this.handleSelectAccount}/>
                     </div>
                     <div>
 
@@ -116,27 +225,10 @@ class App extends React.Component<any, any> {
                         />
 
                     </div>
-                    <div>
-                        {/*// 99% per https://github.com/recharts/recharts/issues/172*/}
-                        {/*<ResponsiveContainer width="99%" height={320}>*/}
-                        {/*<LineChart data={data}>*/}
-                        {/*<XAxis dataKey="name"/>*/}
-                        {/*<YAxis/>*/}
-                        {/*<CartesianGrid vertical={false} strokeDasharray="3 3"/>*/}
-                        {/*<Tooltip/>*/}
-                        {/*<Legend/>*/}
-                        {/*<Line type="monotone" dataKey="Visits" stroke="#82ca9d"/>*/}
-                        {/*<Line type="monotone" dataKey="Orders" stroke="#8884d8" activeDot={{r: 8}}/>*/}
-                        {/*</LineChart>*/}
-                        {/*</ResponsiveContainer>*/}
-
-
-                    </div>
                 </div>
-            );
-        }else if (this.state.activeView === 'v') {
-            return (
-                <div className="App">
+            )}
+        {this.state.activeView === 'v' && (
+                <div>
                     <div>
                         <Button variant="contained"
                                 color="primary"
@@ -151,16 +243,14 @@ class App extends React.Component<any, any> {
                         > Upload Data</Button>
                     </div>
                     <div>
-                        {/*<FileLoader />*/}
+                        <FileLoader onSubmit={this.onSubmitFileLoader}/>
                     </div>
                 </div>
 
-            );
-        }
-        else{
-            return (
-                <div className="App">
-                    <div>
+            )}
+        {this.state.activeView === '' && (
+
+            <div>
                         <Button variant="contained"
                                 color="primary"
                                 className={classes.button}
@@ -172,14 +262,13 @@ class App extends React.Component<any, any> {
                                 className={classes.button}
                                 onClick={this.onClickButtonMenuView}
                         > Upload Data</Button>
-                    </div>
-                    <div>
+
                         {this.state.activeView}
-                    </div>
-                </div>
-            );
+            </div>
+            )}
 
-        }
+</div>
+        )
     }
 
 }
