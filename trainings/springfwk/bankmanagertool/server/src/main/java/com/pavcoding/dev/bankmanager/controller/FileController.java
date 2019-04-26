@@ -1,6 +1,8 @@
 package com.pavcoding.dev.bankmanager.controller;
 
+import com.pavcoding.dev.bankmanager.model.Account;
 import com.pavcoding.dev.bankmanager.payload.UploadFileResponse;
+import com.pavcoding.dev.bankmanager.repository.AccountRepository;
 import com.pavcoding.dev.bankmanager.repository.FileLoader;
 import com.pavcoding.dev.bankmanager.service.FileStorageService;
 import org.slf4j.Logger;
@@ -27,6 +29,10 @@ public class FileController {
     private static final Logger logger = LoggerFactory.getLogger(FileController.class);
 
     @Autowired
+    private AccountRepository repository;
+
+
+    @Autowired
     private FileStorageService fileStorageService;
 
     @PostMapping("/uploadFile")
@@ -34,9 +40,15 @@ public class FileController {
 
         String filename = fileStorageService.storeFile(file);
 
+
+
         Path filePath = fileStorageService.fileLocation(file);
         FileLoader fileLoader = new FileLoader();
-        fileLoader.loadExtractFromCitiFile(filePath);
+        Account account = fileLoader.loadExtractFromCitiFile(filePath);
+
+        repository.save(account);
+
+        logger.info("Account " + account.getAccountNumber() + " has been registered !");
 
         String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
                 .path("/downloadFile/")

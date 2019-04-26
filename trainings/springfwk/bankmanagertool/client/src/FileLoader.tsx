@@ -37,7 +37,7 @@ class FileLoader extends React.Component<any,any>{
 
     private handleSubmit(event) {
         event.preventDefault();
-        console.log( event.target.titi.files[0].name);
+        console.log( "FileLoader -> handleSubmit: " + event.target.titi.files[0]);
         console.log( this.filePath.current.files[0].name);
         this.props.onSubmit(event.target.titi.files[0]);
         this.filePath = event.target.titi.files[0].name;

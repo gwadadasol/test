@@ -1,15 +1,14 @@
 import * as React from 'react';
-// import './App.css';
-
 import AccountListSelect from "./AccountListSelect";
 
 import OperationList from "./OperationList";
 
 import Button from '@material-ui/core/Button';
 
-import { withStyles } from '@material-ui/core/styles';
+import {withStyles} from '@material-ui/core/styles';
 
 import FileLoader from "./FileLoader";
+// import './App.css';
 
 
 const styles = theme => ({
@@ -63,19 +62,29 @@ class App extends React.Component<any, any> {
         console.log("App -> onSubmitFileLoader: " + file);
 
         const   data = new FormData();
-        data.append("file", file);
+        data.append('file', file);
 
-        fetch('http://localhost:8080/uploadFile', {
-            method: 'POST',
-            body: data,
-            mode: 'no-cors',
-            headers:{
-                "Content-Type": "multipart/form-data",
+        console.log(data);
 
-            }
-        });
-            // .then(response => response.json())
-            // .then(value => console.log(value));
+        fetch('http://localhost:8080/uploadFile',
+            {
+                method: 'POST',
+                body: data
+                // ,
+                // mode: 'no-cors' // ,
+                // headers: {
+                //     "Content-Type": "multipart/form-data",
+                //
+                // }
+            }).then(
+            response => response.json() // if the response is a JSON object
+        ).then(
+            success => console.log(success) // Handle the success response object
+        ).catch(
+            error => console.log(error) // Handle the error response object
+        );
+        // .then(response => response.json())
+        // .then(value => console.log(value));
 
     }
 
