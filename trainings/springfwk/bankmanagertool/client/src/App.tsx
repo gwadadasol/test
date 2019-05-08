@@ -4,6 +4,7 @@ import AccountListSelect from "./AccountListSelect";
 import OperationList from "./OperationList";
 
 import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
 
 import {withStyles} from '@material-ui/core/styles';
 
@@ -203,7 +204,8 @@ class App extends React.Component<any, any> {
             <div className="App">
         {this.state.activeView === 'l' &&  (
                 <div>
-                    <div>
+                    <Grid>
+
                         <Button variant="contained"
                                 color="primary"
                                 className={classes.button}
@@ -215,15 +217,7 @@ class App extends React.Component<any, any> {
                                 className={classes.button}
                                 onClick={this.onClickButtonMenuView}
                         > Upload Data</Button>
-                    </div>
-                    <div>
-                        {this.state.activeView}
-                    </div>
-
-                    <div>
                         <AccountListSelect onSelect={this.handleSelectAccount}/>
-                    </div>
-                    <div>
 
                         <OperationList currentBalance={currentBalance}
                                        initialBalance={initialBalance}
@@ -233,7 +227,7 @@ class App extends React.Component<any, any> {
                                        endPeriod={endPeriod}
                         />
 
-                    </div>
+                    </Grid>
                 </div>
             )}
         {this.state.activeView === 'v' && (

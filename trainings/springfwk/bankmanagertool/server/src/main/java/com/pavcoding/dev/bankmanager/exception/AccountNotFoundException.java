@@ -1,4 +1,4 @@
-package com.pavcoding.dev.bankmanager.controller;
+package com.pavcoding.dev.bankmanager.exception;
 
 public class AccountNotFoundException extends RuntimeException {
 

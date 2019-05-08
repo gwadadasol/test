@@ -70,6 +70,11 @@ public class FileLoader {
                             operation = new Operation(newdate, description, amount, account.getId());
                             account.addOperation(operation);
 
+                            if ( account.getAccountNumber() != accountName){
+                                account.setAccountNumber(accountName);
+                            }
+
+
                         } catch (ParseException e) {
                             e.printStackTrace();
                         }
