@@ -48,21 +48,21 @@ class App extends React.Component<any, any> {
     }
 
     public onClickButtonMenuLoad = () => {
-        this.setState({ activeView: 'l' });
+        this.setState({activeView: 'l'});
     }
 
     public onClickButtonMenuView = () => {
-        this.setState({ activeView: 'v' });
+        this.setState({activeView: 'v'});
     }
 
-    public onClickButtonSumitFileSelection = (event) =>{
+    public onClickButtonSumitFileSelection = (event) => {
         console.log(event);
     };
 
-    public onSubmitFileLoader = (file) =>{
+    public onSubmitFileLoader = (file) => {
         console.log("App -> onSubmitFileLoader: " + file);
 
-        const   data = new FormData();
+        const data = new FormData();
         data.append('file', file);
 
         console.log(data);
@@ -100,109 +100,8 @@ class App extends React.Component<any, any> {
 
         const {classes} = this.props;
 
-
-        // if (this.state.activeView === 'l') {
-        //     return (
-        //         <div className="App">
-        //             <div>
-        //                 <Button variant="contained"
-        //                         color="primary"
-        //                         className={classes.button}
-        //                         onClick={this.onClickButtonMenuLoad}
-        //                 > Show Accounts</Button>
-        //
-        //                 <Button variant="contained"
-        //                         color="primary"
-        //                         className={classes.button}
-        //                         onClick={this.onClickButtonMenuView}
-        //                 > Upload Data</Button>
-        //             </div>
-        //             <div>
-        //                 {this.state.activeView}
-        //             </div>
-        //
-        //             <div>
-        //                 <AccountListSelect onSelect={this.handleSelectAccount}/>
-        //             </div>
-        //             <div>
-        //
-        //                 <OperationList currentBalance={currentBalance}
-        //                                initialBalance={initialBalance}
-        //                                operations={operations}
-        //                                accountNumber={accountNumber}
-        //                                startPeriod={startPeriod}
-        //                                endPeriod={endPeriod}
-        //                 />
-        //
-        //             </div>
-        //             <div>
-        //                 {/*// 99% per https://github.com/recharts/recharts/issues/172*/}
-        //                 {/*<ResponsiveContainer width="99%" height={320}>*/}
-        //                 {/*<LineChart data={data}>*/}
-        //                 {/*<XAxis dataKey="name"/>*/}
-        //                 {/*<YAxis/>*/}
-        //                 {/*<CartesianGrid vertical={false} strokeDasharray="3 3"/>*/}
-        //                 {/*<Tooltip/>*/}
-        //                 {/*<Legend/>*/}
-        //                 {/*<Line type="monotone" dataKey="Visits" stroke="#82ca9d"/>*/}
-        //                 {/*<Line type="monotone" dataKey="Orders" stroke="#8884d8" activeDot={{r: 8}}/>*/}
-        //                 {/*</LineChart>*/}
-        //                 {/*</ResponsiveContainer>*/}
-        //
-        //
-        //             </div>
-        //         </div>
-        //     );
-        // }else if (this.state.activeView === 'v') {
-        //     return (
-        //         <div className="App">
-        //             <div>
-        //                 <Button variant="contained"
-        //                         color="primary"
-        //                         className={classes.button}
-        //                         onClick={this.onClickButtonMenuLoad}
-        //                 > Show Accounts</Button>
-        //
-        //                 <Button variant="contained"
-        //                         color="primary"
-        //                         className={classes.button}
-        //                         onClick={this.onClickButtonMenuView}
-        //                 > Upload Data</Button>
-        //             </div>
-        //             <div>
-        //                 <FileLoader />
-        //             </div>
-        //         </div>
-        //
-        //     );
-        // }
-        // else{
-        //     return (
-        //         <div className="App">
-        //             <div>
-        //                 <Button variant="contained"
-        //                         color="primary"
-        //                         className={classes.button}
-        //                         onClick={this.onClickButtonMenuLoad}
-        //                 > Show Accounts</Button>
-        //
-        //                 <Button variant="contained"
-        //                         color="primary"
-        //                         className={classes.button}
-        //                         onClick={this.onClickButtonMenuView}
-        //                 > Upload Data</Button>
-        //             </div>
-        //             <div>
-        //                 {this.state.activeView}
-        //             </div>
-        //         </div>
-        //     );
-        //
-        // }
-
-        return(
+        return (
             <div className="App">
-        {this.state.activeView === 'l' &&  (
                 <div>
                     <Grid>
 
@@ -217,60 +116,30 @@ class App extends React.Component<any, any> {
                                 className={classes.button}
                                 onClick={this.onClickButtonMenuView}
                         > Upload Data</Button>
-                        <AccountListSelect onSelect={this.handleSelectAccount}/>
-
-                        <OperationList currentBalance={currentBalance}
-                                       initialBalance={initialBalance}
-                                       operations={operations}
-                                       accountNumber={accountNumber}
-                                       startPeriod={startPeriod}
-                                       endPeriod={endPeriod}
-                        />
-
                     </Grid>
+                        {this.state.activeView === 'l' && (
+                            <Grid>
+                                <AccountListSelect onSelect={this.handleSelectAccount}/>
+
+                                <OperationList currentBalance={currentBalance}
+                                               initialBalance={initialBalance}
+                                               operations={operations}
+                                               accountNumber={accountNumber}
+                                               startPeriod={startPeriod}
+                                               endPeriod={endPeriod}
+                                />
+                            </Grid>
+
+                        )}
+                        {this.state.activeView === 'v' && (
+                            <Grid>
+                                <FileLoader onSubmit={this.onSubmitFileLoader}/>
+
+                            </Grid>
+
+                        )}
                 </div>
-            )}
-        {this.state.activeView === 'v' && (
-                <div>
-                    <div>
-                        <Button variant="contained"
-                                color="primary"
-                                className={classes.button}
-                                onClick={this.onClickButtonMenuLoad}
-                        > Show Accounts</Button>
-
-                        <Button variant="contained"
-                                color="primary"
-                                className={classes.button}
-                                onClick={this.onClickButtonMenuView}
-                        > Upload Data</Button>
-                    </div>
-                    <div>
-                        <FileLoader onSubmit={this.onSubmitFileLoader}/>
-                    </div>
-                </div>
-
-            )}
-        {this.state.activeView === '' && (
-
-            <div>
-                        <Button variant="contained"
-                                color="primary"
-                                className={classes.button}
-                                onClick={this.onClickButtonMenuLoad}
-                        > Show Accounts</Button>
-
-                        <Button variant="contained"
-                                color="primary"
-                                className={classes.button}
-                                onClick={this.onClickButtonMenuView}
-                        > Upload Data</Button>
-
-                        {this.state.activeView}
             </div>
-            )}
-
-</div>
         )
     }
 
