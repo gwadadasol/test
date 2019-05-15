@@ -1,5 +1,6 @@
 import * as React from 'react';
 import AccountListSelect from "./AccountListSelect";
+import Account from "./Account";
 
 import OperationList from "./OperationList";
 
@@ -54,6 +55,12 @@ class App extends React.Component<any, any> {
     public onClickButtonMenuView = () => {
         this.setState({activeView: 'v'});
     }
+
+    public onClickButtonMenuManageAccount = () => {
+        this.setState({activeView: 'ma'});
+    }
+
+
 
     public onClickButtonSumitFileSelection = (event) => {
         console.log(event);
@@ -116,6 +123,12 @@ class App extends React.Component<any, any> {
                                 className={classes.button}
                                 onClick={this.onClickButtonMenuView}
                         > Upload Data</Button>
+                        <Button variant="contained"
+                                color="primary"
+                                className={classes.button}
+                                onClick={this.onClickButtonMenuManageAccount}
+                        > Manage Account</Button>
+
                     </Grid>
                         {this.state.activeView === 'l' && (
                             <Grid>
@@ -138,6 +151,15 @@ class App extends React.Component<any, any> {
                             </Grid>
 
                         )}
+                    {this.state.activeView === 'ma' && (
+                        <Grid>
+                            <AccountListSelect onSelect={this.handleSelectAccount}/>
+
+                            <Account/>
+                        </Grid>
+
+                    )}
+
                 </div>
             </div>
         )
