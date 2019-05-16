@@ -78,12 +78,6 @@ class App extends React.Component<any, any> {
             {
                 method: 'POST',
                 body: data
-                // ,
-                // mode: 'no-cors' // ,
-                // headers: {
-                //     "Content-Type": "multipart/form-data",
-                //
-                // }
             }).then(
             response => response.json() // if the response is a JSON object
         ).then(
@@ -155,7 +149,7 @@ class App extends React.Component<any, any> {
                         <Grid>
                             <AccountListSelect onSelect={this.handleSelectAccount}/>
 
-                            <Account/>
+                            <Account account = {this.state.selectectAccount}/>
                         </Grid>
 
                     )}
