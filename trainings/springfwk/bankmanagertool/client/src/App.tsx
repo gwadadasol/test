@@ -36,6 +36,7 @@ class App extends React.Component<any, any> {
         };
 
         this.handleSelectAccount = this.handleSelectAccount.bind(this);
+
     }
 
     public handleSelectAccount(id, account) {
@@ -46,6 +47,8 @@ class App extends React.Component<any, any> {
             operations: account.operations,
             selectectAccount: account
         });
+
+        console.log("Account ID : " + account.id);
     }
 
     public onClickButtonMenuLoad = () => {
@@ -59,7 +62,6 @@ class App extends React.Component<any, any> {
     public onClickButtonMenuManageAccount = () => {
         this.setState({activeView: 'ma'});
     }
-
 
 
     public onClickButtonSumitFileSelection = (event) => {
@@ -88,6 +90,45 @@ class App extends React.Component<any, any> {
         // .then(response => response.json())
         // .then(value => console.log(value));
 
+    }
+
+    public onUpdateAccount = (account) => {
+        console.log("App -> onUpdateAccount: " + account);
+
+        const data = new FormData();
+
+        console.log(data);
+
+
+        data.append('accountId', account.id);
+        data.append('accountNumber', account.accountNumber);
+        data.append('creationDate', account.creationDate);
+        data.append('initialBalance', account.initialBalance);
+        data.append('currentBalance', account.currentBalance);
+        data.append('startPeriod', account.startPeriod);
+        data.append('endPeriod', account.endPeriod);
+
+       console.log('accountId' + account.id);
+       console.log('accountNumber' + account.accountNumber);
+       console.log('creationDate' + account.creationDate);
+       console.log('initialBalance' + account.initialBalance);
+       console.log('currentBalance' + account.currentBalance);
+       console.log('startPeriod' + account.startPeriod);
+       console.log('endPeriod' + account.endPeriod);
+
+        // console.log("Data: " + data);
+
+        fetch('http://localhost:8080/updateAccount',
+            {
+                method: 'POST',
+                body: data
+            }).then(
+            response => response.json() // if the response is a JSON object
+        ).then(
+            success => console.log(success) // Handle the success response object
+        ).catch(
+            error => console.log(error) // Handle the error response object
+        );
     }
 
     public render() {
@@ -124,32 +165,33 @@ class App extends React.Component<any, any> {
                         > Manage Account</Button>
 
                     </Grid>
-                        {this.state.activeView === 'l' && (
-                            <Grid>
-                                <AccountListSelect onSelect={this.handleSelectAccount}/>
+                    {this.state.activeView === 'l' && (
+                        <Grid>
+                            <AccountListSelect onSelect={this.handleSelectAccount}/>
 
-                                <OperationList currentBalance={currentBalance}
-                                               initialBalance={initialBalance}
-                                               operations={operations}
-                                               accountNumber={accountNumber}
-                                               startPeriod={startPeriod}
-                                               endPeriod={endPeriod}
-                                />
-                            </Grid>
+                            <OperationList currentBalance={currentBalance}
+                                           initialBalance={initialBalance}
+                                           operations={operations}
+                                           accountNumber={accountNumber}
+                                           startPeriod={startPeriod}
+                                           endPeriod={endPeriod}
+                            />
+                        </Grid>
 
-                        )}
-                        {this.state.activeView === 'v' && (
-                            <Grid>
-                                <FileLoader onSubmit={this.onSubmitFileLoader}/>
+                    )}
+                    {this.state.activeView === 'v' && (
+                        <Grid>
+                            <FileLoader onSubmit={this.onSubmitFileLoader}/>
 
-                            </Grid>
+                        </Grid>
 
-                        )}
+                    )}
                     {this.state.activeView === 'ma' && (
                         <Grid>
                             <AccountListSelect onSelect={this.handleSelectAccount}/>
 
-                            <Account account = {this.state.selectectAccount}/>
+                            <Account account={this.state.selectectAccount} onUpdateAccount={this.onUpdateAccount}/>
+                            {console.log("'ma': selectectAccount.accountId:" +this.state.selectectAccount.id )}
                         </Grid>
 
                     )}
