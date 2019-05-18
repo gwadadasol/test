@@ -72,102 +72,114 @@ class OperationList extends React.Component<any, any> {
     public constructor(props: any) {
         super(props);
 
+        this.state = {
+            operationSize: this.props.operations.length
+        };
+
     }
 
 
     public render() {
         const operations = this.props.operations;
+        // this.setState({operationSize: operations.length});
 
         const {classes, columns, ...tableProps} = this.props;
 
-        console.log(operations.length);
+        console.log("# operations: " + operations.length);
+        if (operations.length > 0) {
+            return (
 
-        return (
+                <div>
 
-            <div>
-                {"test :" + operations.length}
-                {/*<Paper component={"div"}>*/}
-                <Grid container={true} direction="column" spacing={24}>
-                    {/*<Grid container={true} direction="row" justify="flex-start" alignItems="flex-start">*/}
-                    <Grid container={true} item={true}>
-                        <Paper style={style.Paper}>
-                            <Typography variant="h5">Current Balance: {this.props.currentBalance}</Typography>
-                        </Paper>
-                    </Grid>
-                    <Grid container={true} className={"demo"} direction="row" justify="flex-start" alignItems="center" spacing={16} item={true}>
-                        <Grid item={true}>
-                            <Paper style={style.Paper}>
-                                <Typography variant="h5">Period: </Typography>
-                            </Paper>
+                    <Paper>
+                        <Grid container={true} direction="column" spacing={8} wrap={"nowrap"}>
+                            {/*<Grid container={true} direction="row" justify="flex-start" alignItems="flex-start">*/}
+                            <Grid container={true} item={true} wrap={"nowrap"}>
+                                <Paper style={style.Paper}>
+                                    <Typography variant="h5">Current Balance: {this.props.currentBalance}</Typography>
+                                </Paper>
+                            </Grid>
+                            <Grid container={true} className={"demo"} direction="row" justify="flex-start"
+                                  alignItems="center" spacing={16} item={true}>
+                                <Grid item={true}>
+                                    <Paper style={style.Paper}>
+                                        <Typography variant="h5">Period: </Typography>
+                                    </Paper>
+                                </Grid>
+                                <Grid item={true}>
+                                    <Paper style={style.Paper}>
+                                        <Typography variant="h5">From: </Typography>
+                                        <Typography variant="h5">{this.displayDate(this.props.startPeriod)}</Typography>
+                                    </Paper>
+                                </Grid>
+                                <Grid item={true}>
+                                    <Paper style={style.Paper}>
+                                        <Typography variant="h5">To: </Typography>
+                                        <Typography variant="h5">{this.displayDate(this.props.endPeriod)}</Typography>
+                                    </Paper>
+                                </Grid>
+                            </Grid>
+
+
+                            <Grid item={true}>
+                                <div style={{height: 500, 'overflowY': 'auto'}}>
+                                    <Table >
+                                        <TableHead >
+                                            <TableRow>
+                                                <TableCell align="center"><Typography
+                                                    variant="h6">Date</Typography></TableCell>
+                                                <TableCell align="center"><Typography
+                                                    variant="h6">Description</Typography></TableCell>
+                                                <TableCell align="right"><Typography
+                                                    variant="h6">Amount</Typography></TableCell>
+                                            </TableRow>
+                                        </TableHead>
+
+                                        <TableBody >
+
+                                            {operations.map((operation: any) =>
+
+                                                <TableRow key={operation.id}>
+                                                    <TableCell component="th" scope="row">
+                                                        <Typography
+                                                            variant="body1">{this.displayDate(operation.date)}</Typography>
+                                                    </TableCell>
+                                                    <TableCell align="right">
+                                                        <Typography variant="body1">{operation.description}</Typography>
+                                                    </TableCell>
+                                                    <TableCell align="right">
+                                                        <Typography variant="body1">{operation.amount}</Typography>
+                                                    </TableCell>
+                                                </TableRow>
+                                            )}
+                                        </TableBody>
+                                    </Table>
+
+
+                                </div>
+                            </Grid>
+                            <Grid container={true} item={true} spacing={8}>
+                                <Grid item={true}>
+                                    <Paper style={style.Paper}>
+                                        <Typography variant="h5"> Initial Balance: </Typography>
+                                    </Paper>
+                                </Grid>
+                                <Grid item={true}>
+                                    <Paper style={style.Paper}>
+                                        <Typography variant="h5"> {this.props.initialBalance} </Typography>
+                                    </Paper>
+                                </Grid>
+                            </Grid>
                         </Grid>
-                        <Grid item={true}>
-                            <Paper style={style.Paper}>
-                                <Typography variant="h5">From: </Typography>
-                                <Typography variant="h5">{this.displayDate(this.props.startPeriod)}</Typography>
-                            </Paper>
-                        </Grid>
-                        <Grid item={true}>
-                            <Paper style={style.Paper}>
-                                <Typography variant="h5">To: </Typography>
-                                <Typography variant="h5">{this.displayDate(this.props.endPeriod)}</Typography>
-                            </Paper>
-                        </Grid>
-                    </Grid>
+                    </Paper>
 
-
-                    <Grid item={true}>
-                        <div style={{height: 500, 'overflow-y': 'auto'}}>
-                            <Table component="div">
-                                <TableHead component={"div"}>
-                                    <TableRow>
-                                        <TableCell align="center"><Typography variant="h6">Date</Typography></TableCell>
-                                        <TableCell align="center"><Typography
-                                            variant="h6">Description</Typography></TableCell>
-                                        <TableCell align="right"><Typography
-                                            variant="h6">Amount</Typography></TableCell>
-                                    </TableRow>
-                                </TableHead>
-
-                                <TableBody>
-
-                                    {operations.map((operation: any) =>
-
-                                        <TableRow key={operation.id}>
-                                            <TableCell component="th" scope="row">
-                                                <Typography
-                                                    variant="body1">{this.displayDate(operation.date)}</Typography>
-                                            </TableCell>
-                                            <TableCell align="right">
-                                                <Typography variant="body1">{operation.description}</Typography>
-                                            </TableCell>
-                                            <TableCell align="right">
-                                                <Typography variant="body1">{operation.amount}</Typography>
-                                            </TableCell>
-                                        </TableRow>
-                                    )}
-                                </TableBody>
-                            </Table>
-
-
-                        </div>
-                    </Grid>
-                    <Grid container={true} item={true} spacing={8}>
-                        <Grid item={true}>
-                        <Paper style={style.Paper}>
-                            <Typography variant="h5"> Initial Balance: </Typography>
-                        </Paper>
-                        </Grid>
-                        <Grid item={true}>
-                            <Paper style={style.Paper}>
-                                <Typography variant="h5"> {this.props.initialBalance} </Typography>
-                            </Paper>
-                        </Grid>
-                    </Grid>
-                </Grid>
-                {/*</Paper>*/}
-
-            </div>
-        );
+                </div>
+            );
+        } else {
+            return (
+                <div/>
+            );
+        }
     }
 
     private displayDate(value) {

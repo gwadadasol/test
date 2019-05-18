@@ -60,7 +60,7 @@ public class FileController {
     }
 
     @PostMapping("/uploadMultipleFiles")
-    public List<UploadFileResponse> uploadMultipleFile(@RequestParam("files") MultipartFile[] files){
+public List<UploadFileResponse> uploadMultipleFile(@RequestParam("files") MultipartFile[] files){
         return Arrays.asList(files)
                 .stream()
                 .map(file -> uploadFile(file))
