@@ -359,6 +359,7 @@
     <Content Include="js\home-index.min.js">
       <DependentUpon>home-index.js</DependentUpon>
     </Content>
+    <Content Include="js\myapp.js" />
     <Content Include="js\topicsController.js" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
