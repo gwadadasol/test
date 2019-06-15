@@ -3,8 +3,9 @@
     "",
     "\\csharp",
     "\\csharp\\OdeToFood",
-    "\\csharp\\OdeToFood\\OdeToFood"
+    "\\csharp\\OdeToFood\\.vs",
+    "\\csharp\\OdeToFood\\.vs\\config"
   ],
-  "SelectedNode": "\\csharp\\OdeToFood\\OdeToFood",
+  "SelectedNode": "\\csharp\\OdeToFood\\.vs\\config\\applicationhost.config",
   "PreviewInSolutionExplorer": false
 }
