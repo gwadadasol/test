@@ -1,6 +1,6 @@
 ./bin
 ./obj
-
+./vs
 
 **/MessageBoard/obj
 **/MessageBoard/bin
