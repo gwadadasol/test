@@ -6,16 +6,18 @@ namespace BankAccountChecker
 {
     class Program
     {
+
+        
         static void Main(string[] args)
         {
             // Console.WriteLine("Hello World!1");
 
             RbcMovementLoader loader = new RbcMovementLoader();
 
-            IList<RbcAccountMovement> list =  loader.Load().ToList();
+            IEnumerable<RbcAccountMovement> list =  loader.Load();
 
             int count = 1;
-            foreach( var movement in list.Where(x => x.Description2.Contains("INTERAC") && x.AmountCAD <= -2000).ToList())
+            foreach( var movement in list.Where(x => x.Description2.Contains("INTE")).ToList())
             {
                 Console.WriteLine($"{count++}\t{movement.TransactionDate} \t- {movement.AmountCAD}"); 
             }
