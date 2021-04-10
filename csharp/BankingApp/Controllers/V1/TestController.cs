@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace BankingApp.Controllers
+namespace BankingApp.Controllers.V1
 {
     [ApiController]
     [Route("user")]
