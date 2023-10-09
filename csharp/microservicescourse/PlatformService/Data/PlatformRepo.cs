@@ -16,6 +16,8 @@ namespace PlatformService.Data
             {
                 throw new ArgumentNullException(nameof(plat));
             }
+
+            _context.Platforms.Add(plat);
         }
 
         public IEnumerable<Platform> GetAllPlaforms()
@@ -23,7 +25,10 @@ namespace PlatformService.Data
             return _context.Platforms.ToList();
         }
 
-        public Platform GetPlatformById(int id) => _context.Platforms.FirstOrDefault(p => p.Id == id);
+        public Platform GetPlatformById(int id)
+        {
+            return _context.Platforms.FirstOrDefault(p => p.Id == id);
+        }
 
         public bool SaveChanges()
         {
