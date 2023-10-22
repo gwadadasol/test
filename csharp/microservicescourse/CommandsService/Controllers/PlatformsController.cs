@@ -19,5 +19,13 @@ namespace CommandsService.Controllers
             return Ok("Inbound test of from Platforms Controller");
         }
 
+        [HttpGet]
+        public ActionResult GetPlatforms()
+        {
+            System.Console.WriteLine("--> Getting Commands...");
+
+            return Ok();
+        }
+
     }
 }
