@@ -6,8 +6,18 @@ using PlatformService.SyncDataServices.Http;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+if (builder.Environment.IsDevelopment())
+{
+   System.Console.WriteLine( "--> Using in Mem DB");
+    builder.Services.AddDbContext<AppDbContext>( opt => opt.UseInMemoryDatabase("InMem") );
+}
+else
+{
+      System.Console.WriteLine( "--> Using in SQL Server DB");
+    builder.Services.AddDbContext<AppDbContext>( opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("PlatformsConn")) );  
+}
 
-builder.Services.AddDbContext<AppDbContext>( opt => opt.UseInMemoryDatabase("InMem") );
+
 builder.Services.AddScoped<IPlatformRepo, PlatformRepo>();
 
 builder.Services.AddHttpClient<ICommandDataClient, HttpCommandDataClient>();
