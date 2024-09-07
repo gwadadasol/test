@@ -475,3 +475,4 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+csharp/microservicescourse/PlatformService/.vscode/tasks.json
